@@ -16,6 +16,8 @@ class AppRoute {
   static const myWidgetRoute = 'widget';
   static const movieDetailRoute = 'moviedetail';
   static const videoRoute = 'video';
+  static const gameRoute = 'game';
+  static const gameManagementRoute = 'gamemanagement';
 
   final _route = <String, WidgetBuilder>{
     homeRoute: (context) => HomePage(),
@@ -24,6 +26,8 @@ class AppRoute {
     myWidgetRoute: (context) => MyWidget(),
     movieDetailRoute: (context) => MovieDetailPage(),
     videoRoute: (context) => VideoPage(),
+    gameRoute: (context) => GamePage(),
+    gameManagementRoute: (context) => GameManagementPage(),
   };
 
   get getAll => _route;
