@@ -66,7 +66,7 @@ class _GamePageState extends State<GamePage> {
                             borderRadius: BorderRadiusGeometry.circular(20),
                             child: game?.gameImg != ""
                                 ? Image.network(
-                                    API.GAME_API_IMAGE + (game?.gameImg ?? ''),
+                                    API.gameApiImage + (game?.gameImg ?? ''),
                                     height: 150,
                                   )
                                 : Image.asset(

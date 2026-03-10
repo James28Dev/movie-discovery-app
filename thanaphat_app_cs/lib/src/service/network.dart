@@ -20,7 +20,7 @@ class NetworkService {
   static final Dio _dio = Dio();
 
   Future<UpcomingMovieModel> getUpcomingMovieDio() async {
-    final response = await _dio.get(API.MOVIE_URL);
+    final response = await _dio.get(API.movieUrl);
     if (response.statusCode == 200) {
       // print(response.data);
       return upcomingMovieModelFromJson(json.encode(response.data));
@@ -29,7 +29,7 @@ class NetworkService {
   }
 
   Future<VideoModel> getVideoDio(String id) async {
-    String url = API.VIDEO_URL + id + API.MOVIE_API_KEY;
+    String url = API.videoUrl + id + API.movieApiUrl;
     final response = await _dio.get(url);
     if (response.statusCode == 200) {
       return videoModelFromJson(json.encode(response.data));
@@ -38,7 +38,7 @@ class NetworkService {
   }
 
   Future<GameModel> getALLGameDio() async {
-    final response = await _dio.get(API.GAME_API);
+    final response = await _dio.get(API.gameApi);
     if (response.statusCode == 200) {
       // print(response.data);
       return gameModelFromJson(json.encode(response.data));
@@ -47,8 +47,8 @@ class NetworkService {
   }
 
   Future<String> deleteGameDio(String id) async {
-    print('${API.GAME_API}/$id');
-    final response = await _dio.delete('${API.GAME_API}/$id');
+    print('${API.gameApi}/$id');
+    final response = await _dio.delete('${API.gameApi}/$id');
 
     if (response.statusCode == 200) {
       if (response.data > 0) {
@@ -78,7 +78,7 @@ class NetworkService {
         ),
     });
     try {
-      final response = await _dio.post(API.GAME_API + API.GAME_API, data: data);
+      final response = await _dio.post(API.gameApi + API.gameApi, data: data);
       print(response);
       if (response != null) {
         if (response.statusCode == 200) {
@@ -92,9 +92,9 @@ class NetworkService {
       } else {
         print('response is nulllllll');
       }
-    } catch (DioError) {
+    } catch (dioError) {
       print('Exception --> response is nulllllll');
-      print(DioError.toString());
+      print(dioError.toString());
     }
     throw Exception('Network failed');
   }
@@ -109,7 +109,7 @@ class NetworkService {
       'game_img': 'no_image',
     });
     try {
-      final response = await _dio.post(API.GAME_API + API.GAME_API, data: data);
+      final response = await _dio.post(API.gameApi + API.gameApi, data: data);
       print(response);
       if (response != null) {
         if (response.statusCode == 200) {
@@ -123,9 +123,9 @@ class NetworkService {
       } else {
         print('response is nulllllll');
       }
-    } catch (DioError) {
+    } catch (dioError) {
       print('Exception --> response is nulllllll');
-      print(DioError.toString());
+      print(dioError.toString());
     }
     throw Exception('Network failed');
   }
@@ -149,7 +149,7 @@ class NetworkService {
     });
 
     final response = await _dio.post(
-      '${API.GAME_API}${API.GAME_API}/${game.id}',
+      '${API.gameApi}${API.gameApi}/${game.id}',
       data: data,
     );
     print(response.statusCode);
@@ -174,7 +174,7 @@ class NetworkService {
     });
 
     final response = await _dio.post(
-      '${API.GAME_API}${API.GAME_API}/${game.id}',
+      '${API.gameApi}${API.gameApi}/${game.id}',
       data: data,
     );
     print(response.statusCode);

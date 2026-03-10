@@ -84,26 +84,26 @@ class Result {
   };
 }
 
-enum Iso31661 { US }
+enum Iso31661 { us }
 
-final iso31661Values = EnumValues({"US": Iso31661.US});
+final iso31661Values = EnumValues({"US": Iso31661.us});
 
-enum Iso6391 { EN }
+enum Iso6391 { en }
 
-final iso6391Values = EnumValues({"en": Iso6391.EN});
+final iso6391Values = EnumValues({"en": Iso6391.en});
 
-enum Site { YOU_TUBE }
+enum Site { youTube }
 
-final siteValues = EnumValues({"YouTube": Site.YOU_TUBE});
+final siteValues = EnumValues({"YouTube": Site.youTube});
 
-enum Type { BEHIND_THE_SCENES, CLIP, FEATURETTE, TEASER, TRAILER }
+enum Type { behindTheScenes, clip, featurette, teaser, trailer }
 
 final typeValues = EnumValues({
-  "Behind the Scenes": Type.BEHIND_THE_SCENES,
-  "Clip": Type.CLIP,
-  "Featurette": Type.FEATURETTE,
-  "Teaser": Type.TEASER,
-  "Trailer": Type.TRAILER,
+  "Behind the Scenes": Type.behindTheScenes,
+  "Clip": Type.clip,
+  "Featurette": Type.featurette,
+  "Teaser": Type.teaser,
+  "Trailer": Type.trailer,
 });
 
 class EnumValues<T> {
