@@ -34,4 +34,156 @@ class NetworkService {
     }
     throw Exception('Network failed');
   }
+
+  Future<GameModel> getALLGameDio() async {
+    final response = await _dio.get(API.GAME_API);
+    if (response.statusCode == 200) {
+      // print(response.data);
+      return gameModelFromJson(json.encode(response.data));
+    }
+    throw Exception('Network failed');
+  }
+
+  Future<String> deleteGameDio(String id) async {
+    print('${API.GAME_API}/$id');
+    final response = await _dio.delete('${API.GAME_API}/$id');
+
+    if (response.statusCode == 200) {
+      if (response.data > 0) {
+        return 'Delete Successfully';
+      } else {
+        return 'Delete Failed';
+      }
+    }
+    throw Exception('Network failed');
+  } //end
+
+  Future<String> addGameDio(File imageFile, Game game) async {
+    FormData data = FormData.fromMap({
+      'game_id': game.gameId,
+      'game_name': game.gameName,
+      'game_price': int.parse(game.gamePrice.toString()),
+      'game_detail': game.gameDetail,
+      'game_stock': int.parse(game.gameStock.toString()),
+      if (imageFile != null)
+        'game_img': 'has_image'
+      else
+        'game_img': 'no_image',
+      if (imageFile != null)
+        'photo': await MultipartFile.fromFile(
+          imageFile.path,
+          contentType: MediaType('image', 'jpg'),
+        ),
+    });
+    try {
+      final response = await _dio.post(API.GAME_API + API.GAME_API, data: data);
+      print(response);
+      if (response != null) {
+        if (response.statusCode == 200) {
+          print(response.data);
+          if (response.data > 0) {
+            return 'Add Successfully';
+          } else {
+            return 'Add Failed';
+          }
+        }
+      } else {
+        print('response is nulllllll');
+      }
+    } catch (DioError) {
+      print('Exception --> response is nulllllll');
+      print(DioError.toString());
+    }
+    throw Exception('Network failed');
+  }
+
+  Future<String> addGameDioNoImage(Game game) async {
+    FormData data = FormData.fromMap({
+      'game_id': game.gameId,
+      'game_name': game.gameName,
+      'game_price': int.parse(game.gamePrice.toString()),
+      'game_detail': game.gameDetail,
+      'game_stock': int.parse(game.gameStock.toString()),
+      'game_img': 'no_image',
+    });
+    try {
+      final response = await _dio.post(API.GAME_API + API.GAME_API, data: data);
+      print(response);
+      if (response != null) {
+        if (response.statusCode == 200) {
+          print(response.data);
+          if (response.data > 0) {
+            return 'Add Successfully';
+          } else {
+            return 'Add Failed';
+          }
+        }
+      } else {
+        print('response is nulllllll');
+      }
+    } catch (DioError) {
+      print('Exception --> response is nulllllll');
+      print(DioError.toString());
+    }
+    throw Exception('Network failed');
+  }
+
+  Future<String> editGameDio(File imageFile, Game game) async {
+    FormData data = FormData.fromMap({
+      'game_name': game.gameName,
+      'game_price': game.gamePrice,
+      'game_detail': game.gameDetail,
+      'game_img': game.gameImg,
+      'game_stock': game.gameStock,
+      if (imageFile != null)
+        'game_img': game.gameImg
+      else
+        'game_img': 'no_image',
+      if (imageFile != null)
+        'photo': await MultipartFile.fromFile(
+          imageFile.path,
+          contentType: MediaType('image', 'jpg'),
+        ),
+    });
+
+    final response = await _dio.post(
+      '${API.GAME_API}${API.GAME_API}/${game.id}',
+      data: data,
+    );
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      print(response.data);
+      if (response.data > 0) {
+        return 'Edit Successfully';
+      } else {
+        return 'Edit Failed';
+      }
+    }
+    throw Exception('Network failed');
+  }
+
+  Future<String> editGameDioNoImage(Game game) async {
+    FormData data = FormData.fromMap({
+      'game_name': game.gameName,
+      'game_price': game.gamePrice,
+      'game_detail': game.gameDetail,
+      'game_img': 'no_image',
+      'game_stock': game.gameStock,
+    });
+
+    final response = await _dio.post(
+      '${API.GAME_API}${API.GAME_API}/${game.id}',
+      data: data,
+    );
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      print(response.data);
+      if (response.data > 0) {
+        return 'Edit Successfully';
+      } else {
+        return 'Edit Failed';
+      }
+    }
+    throw Exception('Network failed');
+  }
 }
