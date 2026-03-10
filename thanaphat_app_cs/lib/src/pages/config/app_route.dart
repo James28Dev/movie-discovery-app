@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../game/game_management_page.dart';
+import '../game/game_page.dart';
 import '../home/home_page.dart';
 import '../home/my_widget.dart';
 import '../info/info_page.dart';
