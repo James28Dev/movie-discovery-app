@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:thanaphat_app_cs/src/pages/home/home_page.dart';
-import 'package:thanaphat_app_cs/src/pages/info/info_page.dart';
-import 'package:thanaphat_app_cs/src/pages/movie/movie_detail_page.dart';
-import 'package:thanaphat_app_cs/src/pages/movie/upcoming_movie_page.dart';
-import 'package:thanaphat_app_cs/src/pages/home/my_widget.dart';
-import 'package:thanaphat_app_cs/src/pages/movie/video_page.dart';
+
+import '../home/home_page.dart';
+import '../home/my_widget.dart';
+import '../info/info_page.dart';
+import '../movie/movie_detail_page.dart';
+import '../movie/upcoming_movie_page.dart';
+import '../movie/video_page.dart';
 
 class AppRoute {
   static const homeRoute = 'home';
