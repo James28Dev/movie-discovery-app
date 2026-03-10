@@ -55,99 +55,99 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRoute.upcomingMovieRoute);
-                },
-                child: Container(
-                  decoration: ShapeDecoration(
-                    image: DecorationImage(
-                      scale: 8,
-                      image: AssetImage('assets/images/cinema.png'),
-                    ),
-                    color: Colors.blueGrey,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                  ),
-                  width: 90,
-                  height: 90,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Movie',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRoute.myWidgetRoute);
-                },
-                child: Container(
-                  decoration: ShapeDecoration(
-                    image: DecorationImage(
-                      scale: 8,
-                      image: AssetImage('assets/images/newspaper.png'),
-                    ),
-                    color: Colors.blueGrey,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                  ),
-                  width: 90,
-                  height: 90,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'New',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                decoration: ShapeDecoration(
-                  image: DecorationImage(
-                    scale: 8,
-                    image: AssetImage('assets/images/map.png'),
-                  ),
-                  color: Colors.blueGrey,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                ),
-                width: 90,
-                height: 90,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Map',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //   children: [
+          //     GestureDetector(
+          //       onTap: () {
+          //         Navigator.pushNamed(context, AppRoute.upcomingMovieRoute);
+          //       },
+          //       child: Container(
+          //         decoration: ShapeDecoration(
+          //           image: DecorationImage(
+          //             scale: 8,
+          //             image: AssetImage('assets/images/cinema.png'),
+          //           ),
+          //           color: Colors.blueGrey,
+          //           shape: RoundedRectangleBorder(
+          //             borderRadius: BorderRadius.all(Radius.circular(20)),
+          //           ),
+          //         ),
+          //         width: 90,
+          //         height: 90,
+          //         child: Column(
+          //           mainAxisAlignment: MainAxisAlignment.end,
+          //           children: [
+          //             Text(
+          //               'Movie',
+          //               style: TextStyle(
+          //                 color: Colors.white,
+          //                 fontWeight: FontWeight.bold,
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //     GestureDetector(
+          //       onTap: () {
+          //         Navigator.pushNamed(context, AppRoute.myWidgetRoute);
+          //       },
+          //       child: Container(
+          //         decoration: ShapeDecoration(
+          //           image: DecorationImage(
+          //             scale: 8,
+          //             image: AssetImage('assets/images/newspaper.png'),
+          //           ),
+          //           color: Colors.blueGrey,
+          //           shape: RoundedRectangleBorder(
+          //             borderRadius: BorderRadius.all(Radius.circular(20)),
+          //           ),
+          //         ),
+          //         width: 90,
+          //         height: 90,
+          //         child: Column(
+          //           mainAxisAlignment: MainAxisAlignment.end,
+          //           children: [
+          //             Text(
+          //               'New',
+          //               style: TextStyle(
+          //                 color: Colors.white,
+          //                 fontWeight: FontWeight.bold,
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //     Container(
+          //       decoration: ShapeDecoration(
+          //         image: DecorationImage(
+          //           scale: 8,
+          //           image: AssetImage('assets/images/map.png'),
+          //         ),
+          //         color: Colors.blueGrey,
+          //         shape: RoundedRectangleBorder(
+          //           borderRadius: BorderRadius.all(Radius.circular(20)),
+          //         ),
+          //       ),
+          //       width: 90,
+          //       height: 90,
+          //       child: Column(
+          //         mainAxisAlignment: MainAxisAlignment.end,
+          //         children: [
+          //           Text(
+          //             'Map',
+          //             style: TextStyle(
+          //               color: Colors.white,
+          //               fontWeight: FontWeight.bold,
+          //             ),
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //   ],
+          // ),
           Expanded(
             child: GridView.count(
               padding: EdgeInsets.all(15),
