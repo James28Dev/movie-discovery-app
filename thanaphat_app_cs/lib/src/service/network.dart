@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:thanaphat_app_cs/src/model/upcoming_movie_model.dart';
-import 'package:thanaphat_app_cs/src/model/video_model.dart';
-import 'package:thanaphat_app_cs/src/pages/config/api.dart';
+import 'package:http_parser/http_parser.dart';
+
+import '../model/game_model.dart';
 import '../model/upcoming_movie_model.dart';
 import '../model/video_model.dart';
 import '../pages/config/api.dart';
