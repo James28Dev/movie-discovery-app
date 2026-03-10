@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:thanaphat_app_cs/src/model/video_model.dart';
-import 'package:thanaphat_app_cs/src/service/network.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import '../../model/video_model.dart';
+import '../../service/network.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({super.key});

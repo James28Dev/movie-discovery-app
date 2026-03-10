@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:thanaphat_app_cs/src/pages/config/app_route.dart';
-import 'package:thanaphat_app_cs/src/service/network.dart';
+
+import '../../service/network.dart';
+import '../config/app_route.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

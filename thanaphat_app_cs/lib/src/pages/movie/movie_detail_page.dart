@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:thanaphat_app_cs/src/model/upcoming_movie_model.dart';
-import 'package:thanaphat_app_cs/src/pages/config/app_route.dart';
+
+import '../../model/upcoming_movie_model.dart';
+import '../config/app_route.dart';
 
 class MovieDetailPage extends StatefulWidget {
   const MovieDetailPage({super.key});

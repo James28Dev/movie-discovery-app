@@ -4,6 +4,9 @@ import 'package:dio/dio.dart';
 import 'package:thanaphat_app_cs/src/model/upcoming_movie_model.dart';
 import 'package:thanaphat_app_cs/src/model/video_model.dart';
 import 'package:thanaphat_app_cs/src/pages/config/api.dart';
+import '../model/upcoming_movie_model.dart';
+import '../model/video_model.dart';
+import '../pages/config/api.dart';
 
 class NetworkService {
   NetworkService._internal();

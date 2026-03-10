@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:thanaphat_app_cs/src/pages/config/app_route.dart';
+
+import '../config/app_route.dart';
 
 class MyWidget extends StatelessWidget {
   MyWidget({super.key});

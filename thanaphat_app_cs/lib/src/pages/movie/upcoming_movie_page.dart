@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:thanaphat_app_cs/src/model/upcoming_movie_model.dart';
-import 'package:thanaphat_app_cs/src/pages/config/app_route.dart';
-import 'package:thanaphat_app_cs/src/service/network.dart';
+
+import '../../model/upcoming_movie_model.dart';
+import '../../service/network.dart';
+import '../config/app_route.dart';
 
 class UpcomingMoviePage extends StatefulWidget {
   const UpcomingMoviePage({super.key});
