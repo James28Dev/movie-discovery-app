@@ -59,8 +59,7 @@ class _UpcomingMoviePageState extends State<UpcomingMoviePage> {
                           child: ClipRRect(
                             borderRadius: BorderRadiusGeometry.circular(20),
                             child: Image.network(
-                              'https://image.tmdb.org/t/p/w500' +
-                                  (movie?.posterPath ?? ''),
+                              'https://image.tmdb.org/t/p/w500${movie?.posterPath ?? ""}',
                             ),
                           ),
                         ),
