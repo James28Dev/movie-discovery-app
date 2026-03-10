@@ -167,8 +167,10 @@ class _HomePageState extends State<HomePage> {
                   child: buildContainer('News', 'assets/images/newspaper.png'),
                 ),
                 GestureDetector(
-                  onTap: () {},
-                  child: buildContainer('Map', 'assets/images/map.png'),
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoute.gameRoute);
+                  },
+                  child: buildContainer('Game', 'assets/images/map.png'),
                 ),
               ],
             ),
