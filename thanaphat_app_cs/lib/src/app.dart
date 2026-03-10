@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:thanaphat_app_cs/src/pages/config/app_route.dart';
-import 'package:thanaphat_app_cs/src/pages/home/home_page.dart';
+
+import 'pages/config/app_route.dart';
+import 'pages/home/home_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
