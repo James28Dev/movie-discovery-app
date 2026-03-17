@@ -93,7 +93,13 @@ class _GamePageState extends State<GamePage> {
                                 Row(
                                   children: [
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(
+                                          context,
+                                          AppRoute.gameManagementRoute,
+                                          arguments: game,
+                                        );
+                                      },
                                       icon: Icon(Icons.edit),
                                     ),
                                     IconButton(
@@ -139,7 +145,11 @@ class _GamePageState extends State<GamePage> {
           title: const Text('Delete Confirmation'),
           content: const SingleChildScrollView(
             child: ListBody(
-              children: <Widget>[Text('Would you like to delete?')],
+              children: <Widget>[
+                Text('Would you like to delete?'),
+                SizedBox(height: 20),
+                Icon(Icons.delete_forever, size: 40, color: Colors.red),
+              ],
             ),
           ),
           actions: <Widget>[
