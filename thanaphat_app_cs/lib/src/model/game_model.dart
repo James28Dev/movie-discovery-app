@@ -11,16 +11,18 @@ String gameModelToJson(GameModel data) => json.encode(data.toJson());
 class GameModel {
   List<Game>? games;
 
-  GameModel({
-    this.games,
-  });
+  GameModel({this.games});
 
   factory GameModel.fromJson(Map<String, dynamic> json) => GameModel(
-    games: json["games"] == null ? [] : List<Game>.from(json["games"]!.map((x) => Game.fromJson(x))),
+    games: json["games"] == null
+        ? []
+        : List<Game>.from(json["games"]!.map((x) => Game.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
-    "games": games == null ? [] : List<dynamic>.from(games!.map((x) => x.toJson())),
+    "games": games == null
+        ? []
+        : List<dynamic>.from(games!.map((x) => x.toJson())),
   };
 }
 
