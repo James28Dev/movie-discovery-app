@@ -109,7 +109,7 @@ class NetworkService {
       'game_img': 'no_image',
     });
     try {
-      final response = await _dio.post(API.gameApi + API.gameApi, data: data);
+      final response = await _dio.post(API.gameApi, data: data);
       print(response);
       if (response != null) {
         if (response.statusCode == 200) {
@@ -174,7 +174,7 @@ class NetworkService {
     });
 
     final response = await _dio.post(
-      '${API.gameApi}${API.gameApi}/${game.id}',
+      API.gameApi + '/' + game.id.toString(),
       data: data,
     );
     print(response.statusCode);
